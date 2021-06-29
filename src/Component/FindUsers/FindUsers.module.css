@@ -1,0 +1,20 @@
+.usersInner {
+    max-width: 70%;
+    width: 100%;
+}
+
+.usersInner .span {
+    width: 600px;
+}
+
+.usersInner img {
+    width: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.selectedPage{
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}

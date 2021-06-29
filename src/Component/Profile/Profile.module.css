@@ -1,0 +1,14 @@
+.wrapper {
+    max-width: 1100px;
+    margin: 0 40px;
+}
+
+.profile {
+    margin: 30px auto;
+
+}
+
+.lifeTime {
+    display: flex;
+    justify-content: space-between;
+}

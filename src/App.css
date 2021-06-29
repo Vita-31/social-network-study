@@ -1,0 +1,11 @@
+.app-wrapper {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Franklin Gothic Heavy";
+    letter-spacing: 0.25px;
+}
+.inner{
+    display: flex;
+}

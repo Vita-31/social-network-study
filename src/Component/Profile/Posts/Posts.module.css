@@ -1,0 +1,69 @@
+.posts {
+    width: 70%;
+}
+
+.createPost {
+    background-color: #fafafa;
+    border-radius: 10px;
+    margin: 30px 0 30px;
+    padding: 15px 36px 20px;
+}
+
+.createPost p {
+    color: #3e3f5e;
+    font-family: Arial;
+    font-weight: 700;
+}
+
+.form {
+    position: relative;
+}
+
+.createPost input {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    padding: 10px 20px 10px 50px;
+    width: 90%;
+    outline: none;
+}
+
+.createPost input::placeholder {
+    color: #3e3f5e;
+}
+
+.createPost input:active {
+    color: #3e3f5e;
+    font-size: 14px;
+}
+
+.createPost img {
+    position: absolute;
+    left: 18px;
+    top: 8px;
+    max-width: 22px;
+}
+
+img {
+    width: 100%;
+}
+
+.createPost button {
+    color: #f8f8f8;
+    background-color:#088dcd;
+    border: 1px solid #f8f8f8;
+    padding: 10px 26px;
+    border-radius: 16px;
+    margin-top: 20px;
+    margin-left: 86%;
+    cursor: pointer;
+    transform: scale(1);
+    transition: 0.5;
+}
+.createPost button:hover{
+    color: #088dcd;
+    background-color: #f8f8f8;
+    border: 1px solid #088dcd;
+    transform: scale(1.05);
+    transition: 0.5;
+}

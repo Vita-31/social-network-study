@@ -1,0 +1,21 @@
+.nav{
+    display: flex;
+    align-items: center;
+    font-family: Arial;
+}
+.nav a {
+    margin-right: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #088dcd;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 10px 26px;
+    display: inline-block;
+    background-color: #f8f8f8;
+    font-weight: 700;
+}
+.nav a.active{
+    color: #f8f8f8;
+    background-color: #088dcd;
+}

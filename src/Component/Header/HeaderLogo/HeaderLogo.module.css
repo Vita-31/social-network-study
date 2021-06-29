@@ -1,0 +1,16 @@
+a{
+    text-decoration: none;
+}
+.headerLogo img{
+    width: 40px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.headerLogo span{
+    color: #1d3554;
+    font-family: Rajdhani;
+    font-size: 25px;
+    font-weight: 700;
+    padding-left: 5px;
+    vertical-align: middle;
+}

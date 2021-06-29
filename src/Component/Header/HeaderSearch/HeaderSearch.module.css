@@ -1,0 +1,39 @@
+.headerSearch{
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+    width: 400px;
+    margin-right: 400px;
+    margin-top: 5px;
+}
+.headerSearch form {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+.headerSearch input {
+    border: 1px solid #e1e8ed;
+    border-radius: 30px;
+    padding: 10px 20px 10px 43px;
+    width: 100%;
+    transition: 0.1s ease 0s;
+    outline: 0;
+}
+
+.headerSearch input::placeholder {
+    font-size: 14px;
+}
+
+.headerSearch button{
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    max-width: 34px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+button img {
+    width: 100%;
+}

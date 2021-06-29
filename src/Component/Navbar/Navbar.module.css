@@ -1,0 +1,69 @@
+.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    line-height: 30px;
+    width: 100%;
+    border-bottom: 1px solid #f5f5f5;
+}
+.navbar a{
+    text-decoration: none;
+}
+.navbarElem{
+    text-align: center;
+    line-height: 30px;
+    height: 50px;
+    padding-top: 20px;
+    width: 200px;
+
+}
+.navbar .navbarElem.active{
+    border-bottom: 3px solid #088dcd;
+}
+.navbarElem svg{
+    fill: rgba(8, 141, 205, 0.09);
+    stroke: #088dcd;
+    overflow: paged-y;
+    visibility: visible;
+    position: relative;
+    transition: all 0.3s ease-in-out 0s;
+}
+.sub{
+    font-size: 22px;
+    transform: translateY(-6px);
+    transition: all 0.5s ease-in-out 0s;
+    overflow: paged-y;
+    visibility: hidden;
+}
+.navbarElem:hover svg{
+     transform: translateY(-30px);
+     transition: all 0.3s ease-in-out 0s;
+     overflow: paged-y;
+     visibility: hidden;
+     fill: transparent;
+     stroke: transparent;
+
+ }
+.navbarElem:hover .sub{
+    transform: translateY(-30px);
+    transition: all 0.3s ease-in-out 0s;
+    overflow: paged-y;
+    visibility: visible;
+
+}
+.navbarElem:hover .sub span{
+    color: #3d3d49;
+}
+
+.sub span{
+    color: transparent;
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    text-transform: capitalize;
+    transition: all 0.3s ease-in-out 0s;
+    text-decoration: none;
+    text-align: center;
+}
+

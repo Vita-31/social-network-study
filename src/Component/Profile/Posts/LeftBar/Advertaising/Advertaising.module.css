@@ -1,0 +1,13 @@
+.subs {
+    display: flex;
+    align-items: center;
+    margin: 0 0 8px 0;
+}
+.subs span{
+    color: #8f97af;
+}
+.subs img{
+    max-width: 24px;
+    width: 100%;
+    margin-right: 10px;
+}

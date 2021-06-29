@@ -1,0 +1,29 @@
+.user .userFoto{
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    display: block;
+    max-width: 135px;
+    border-radius: 100%;
+    border: 3px solid #fff;
+}
+.user .userFoto img{
+    display: block;
+    width: 100%;
+    border-radius: 100%;
+}
+.follow{
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+    border-radius: 20px;
+    background-color: #fff;
+    padding: 8px 26px;
+    cursor: pointer;
+}
+.follow a{
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 22px;
+}

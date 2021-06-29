@@ -1,0 +1,12 @@
+.profileFoto {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 30px;
+}
+
+.profileFoto img {
+    height: 100%;
+    width: 100%;
+    border-radius: 30px;
+}

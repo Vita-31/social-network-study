@@ -1,0 +1,26 @@
+.aboutUser{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.user{
+    margin-bottom: 20px;
+    font-weight: 100;
+    font-family: Arial;
+}
+.user h2{
+    color: #343a40;
+    margin-bottom: 0;
+}
+.user a{
+    text-decoration: none;
+    color: #007bff;
+}
+.aboutFollow{
+    display: flex;
+    align-items: center;
+    font-family: Arial;
+}
+.followItem  {
+    margin-right: 16px;
+}

@@ -1,0 +1,23 @@
+.about{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    background-color: #fafafa;
+    margin: 30px 0 30px;
+    padding: 15px 36px 20px;
+    color: #3e3f5e;
+    font-family: Arial;
+}
+.aboutMe{
+    margin-right: 20px;
+}
+.share{
+    margin-left: 20px;
+}
+.socialMedia {
+    display: flex;
+}
+.socialMedia img{
+    max-width: 30px;
+    margin-right: 20px;
+}

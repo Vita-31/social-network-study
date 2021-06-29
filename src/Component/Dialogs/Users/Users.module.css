@@ -1,0 +1,50 @@
+.users {
+    max-width: 30%;
+    width: 100%;
+    border-right: 1px solid #8f97af;
+
+}
+
+
+.users p {
+    color: #3e3f5e;
+    font-size: 22px;
+    padding: 16px;
+}
+
+.users input {
+    border: 1px solid #e1e8ed;
+    border-radius: 30px;
+    padding: 10px 20px 10px 43px;
+    width: 70%;
+    transition: 0.1s ease 0s;
+    outline: 0;
+}
+
+form {
+    position: relative;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.users img {
+    max-width: 24px;
+    position: absolute;
+    top: 9px;
+    left: 12px;
+}
+
+img {
+    width: 100%;
+}
+
+
+.search {
+    border-bottom: 1px solid #8f97af;
+}
+
+a {
+    text-decoration: none;
+    color: #3e3f5e;
+    font-weight: 700;
+}
