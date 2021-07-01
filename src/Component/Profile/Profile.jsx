@@ -6,7 +6,7 @@ import Aboutme from "./Aboutme/Aboutme";
 import Leftbar from "./Posts/LeftBar/Leftbar";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import PostsContainer from "./Posts/PostsContainer";
-import Preloader from "../Common/Preloader";
+import Preloader from "../Common/Preloader/Preloader";
 
 const Profile = (props) =>{
 

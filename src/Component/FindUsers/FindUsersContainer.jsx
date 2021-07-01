@@ -1,27 +1,34 @@
 import React from "react";
 import {connect} from "react-redux";
 import {
-    follows, followSuccess, getUsers,
+    follows, followSuccess, requestUsers,
     preloaderToggle,
     setTotalUsersCount,
     unfollow, unfollowSuccess
 } from "../../redux/findUsers-reducer";
 import FindUsers from "./FindUsers";
-import Preloader from "../Common/Preloader";
+import Preloader from "../Common/Preloader/Preloader";
 import {Redirect} from "react-router-dom"
 import {WithAuthRedirect} from "../../hoc/WithAuthRedirect";
 import {compose} from "redux";
+import {
+    getCurrentPage, getFollowingToggle, getIsAuth,
+    getIsFetching,
+    getPageSize,
+    getTotalUsersCount,
+    getUsers
+} from "../../redux/findUsers-selectors";
 
 class FindUsersContainer extends React.Component {
 
     componentDidMount() {
 
-        this.props.getUsers(this.props.currentPage, this.props.pageSize);
+        this.props.requestUsers(this.props.currentPage, this.props.pageSize);
 
     }
 
     changePage = (pageNum) => {
-        this.props.getUsers(pageNum, this.props.pageSize);
+        this.props.requestUsers(pageNum, this.props.pageSize);
     }
 
     render() {
@@ -48,16 +55,16 @@ class FindUsersContainer extends React.Component {
 
 let mapStateToProps = (state) => {
     return{
-        users: state.UsersPage.users,
-        pageSize: state.UsersPage.pageSize,
-        totalUsersCount: state.UsersPage.totalUsersCount,
-        currentPage: state.UsersPage.currentPage,
-        isFetching: state.UsersPage.isFetching,
-        followingToggle: state.UsersPage.followingToggle,
-        isAuth: state.auth.isAuth
+        users: getUsers(state),
+        pageSize: getPageSize(state),
+        totalUsersCount: getTotalUsersCount(state),
+        currentPage: getCurrentPage(state),
+        isFetching: getIsFetching(state),
+        followingToggle: getFollowingToggle(state),
+        isAuth: getIsAuth(state)
     }
 }
 export default compose(
-    connect(mapStateToProps, {follows, unfollow, setTotalUsersCount, preloaderToggle, getUsers, followSuccess, unfollowSuccess}),
+    connect(mapStateToProps, {follows, unfollow, setTotalUsersCount, preloaderToggle, requestUsers, followSuccess, unfollowSuccess}),
     WithAuthRedirect
 )(FindUsersContainer)

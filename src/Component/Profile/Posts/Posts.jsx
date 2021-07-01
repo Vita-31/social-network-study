@@ -5,11 +5,9 @@ import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../../Validation/validation/validation";
 import {Input} from "../../Common/InputControl/Input";
 
-const Posts = (props) => {
+const Posts = React.memo(props => {
 
     let itemPost = props.posts.map(p => <Post post={p.post} likeCounts={p.likesCount}/>)
-
-    let newPostsElement = React.createRef();
 {/*
     let addNewPost = () => {
         props.addNewPost()
@@ -36,7 +34,7 @@ const Posts = (props) => {
         </div>
     );
 
-}
+})
 
 let maxLengthCreatorNum = maxLengthCreator(20)
 

@@ -1,4 +1,4 @@
-import {authAPI, usersAPI} from "../Api/Api";
+import {authAPI} from "../Api/Api";
 import {stopSubmit} from "redux-form";
 
 const SET_USER_DATA = 'SET_USER_DATA';
@@ -27,7 +27,7 @@ export const setUserdata = (id,login, email, isAuth) => {return{type: SET_USER_D
 
 export const getUserProfileData = () => {
     return (dispatch) => {
-        authAPI.getMe()
+       return  authAPI.getMe()
             .then(data => {
             if(data.resultCode === 0) {
                 let {id, login, email} = data.data

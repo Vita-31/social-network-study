@@ -80,9 +80,10 @@ export const setTotalUsersCount = (totalUsersCount) => { return  {type: SET_TOTA
 export const preloaderToggle = (isFetching) => { return {type: PRELOADER_TOGGLE, isFetching} }
 export const progressToggle = (isFetching, userId) => { return {type: FOLLOWING_TOGGLE, isFetching, userId} }
 
-export const getUsers = (currentPage, pageSize) => {
+export const requestUsers = (currentPage, pageSize) => {
     return (dispatch) => {
         dispatch(preloaderToggle(true))
+        dispatch(setCurrentPage(currentPage))
         usersAPI.getUsers(currentPage, pageSize).then(data => {
             dispatch(setUsers(data.items))
             dispatch(setTotalUsersCount(data.totalCount))
