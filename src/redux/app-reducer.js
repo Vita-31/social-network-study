@@ -1,6 +1,6 @@
 import {getUserProfileData} from "./auth-reducer";
 
-const SET_INITIALIZED = 'SET_INITIALIZED';
+const SET_INITIALIZED = 'my-social-network/app/SET_INITIALIZED';
 
 let initialization = {
     initialized: false
@@ -24,7 +24,8 @@ export const setInitialized = () => { return { type: SET_INITIALIZED } };
 
 export const initializedApp = () => (dispatch) => {
     let promise = dispatch(getUserProfileData());
-    promise.then( () => {
+    Promise.all([promise])
+        .then( () => {
         dispatch(setInitialized())
     });
 

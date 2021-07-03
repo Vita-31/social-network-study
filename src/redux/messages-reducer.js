@@ -1,4 +1,4 @@
-const ADD_MESSAGE = 'ADD-MESSAGE';
+const ADD_MESSAGE = 'my-social-network/messages/ADD-MESSAGE';
 {/*
     const UPDATE_MESSAGE_TEXT = 'UPDATE-MESSAGE-TEXT';
 */}

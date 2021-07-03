@@ -3,7 +3,7 @@ import styles from './UserDialog.module.css';
 import UserDialogItem from "./UserDialogItem/UserDialogItem";
 import {Redirect} from "react-router-dom";
 import {Field, reduxForm} from "redux-form";
-import {Textarea} from "../../../Common/InputControl/Input";
+import {Textarea} from "../../../Common/FormControl/FormControl";
 import {maxLengthCreator, required} from "../../../../Validation/validation/validation";
 
 const UserDialog = (props) => {

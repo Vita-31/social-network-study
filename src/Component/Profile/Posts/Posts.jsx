@@ -3,7 +3,7 @@ import styles from './Posts.module.css'
 import Post from "./Post/Post";
 import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../../Validation/validation/validation";
-import {Input} from "../../Common/InputControl/Input";
+import {FormControl, Input} from "../../Common/FormControl/FormControl";
 
 const Posts = React.memo(props => {
 

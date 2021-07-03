@@ -8,9 +8,10 @@ import ProfileContainer from "./Component/Profile/ProfileContainer";
 import Dialogs from "./Component/Dialogs/Dialogs";
 import HeaderContainer from "./Component/Header/HeaderContainer";
 import Login from "./Component/Login/Login";
-import {connect} from "react-redux";
+import {connect, Provider} from "react-redux";
 import {initializedApp} from "./redux/app-reducer";
 import Preloader from "./Component/Common/Preloader/Preloader";
+import store from "./redux/redux-store";
 
 class App extends React.Component{
 

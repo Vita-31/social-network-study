@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../InputControl/Input.module.css"
+import styles from "../FormControl/Input.module.css"
 
 export const TextareaControl = ({input, meta, ...props}) => {
 
