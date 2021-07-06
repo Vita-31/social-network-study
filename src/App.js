@@ -3,15 +3,16 @@ import './App.css';
 import Navbar from "./Component/Navbar/Navbar";
 import Sidebar from "./Component/Sidebar/Sidebar";
 import {BrowserRouter, Route} from "react-router-dom";
-import FindUsersContainer from "./Component/FindUsers/FindUsersContainer";
-import ProfileContainer from "./Component/Profile/ProfileContainer";
-import Dialogs from "./Component/Dialogs/Dialogs";
 import HeaderContainer from "./Component/Header/HeaderContainer";
-import Login from "./Component/Login/Login";
 import {connect, Provider} from "react-redux";
 import {initializedApp} from "./redux/app-reducer";
 import Preloader from "./Component/Common/Preloader/Preloader";
 import store from "./redux/redux-store";
+const ProfileContainer = React.lazy( () => import("./Component/Profile/ProfileContainer"));
+const Dialogs = React.lazy( () => import("./Component/Dialogs/Dialogs"));
+const FindUsersContainer = React.lazy( () => import("./Component/FindUsers/FindUsersContainer"));
+const Login = React.lazy( () => import("./Component/Login/Login"));
+
 
 class App extends React.Component{
 
@@ -31,10 +32,26 @@ class App extends React.Component{
                     < Navbar/>
                     <div className='inner'>
                         <Sidebar/>
-                       <Route path='/profile/:userId?' render={() => <ProfileContainer/>} />
-                        <Route path='/dialogs' render={() => <Dialogs/> } />
-                        <Route path='/users' render={() => <FindUsersContainer/> } />
-                        <Route path='/login' render={() => <Login/> }/>
+                        <Route path='/profile/:userId?' render={() => {
+                            return  <React.Suspense fallback={<Preloader/>}>
+                                        <ProfileContainer/>
+                                    </React.Suspense>
+                        }} />
+                        <Route path='/dialogs' render={() => {
+                             return  <React.Suspense fallback={<Preloader/>}>
+                                        <Dialogs/>
+                                    </React.Suspense>
+                        }} />
+                        <Route path='/users' render={() => {
+                             return  <React.Suspense fallback={<Preloader/>}>
+                                        <FindUsersContainer/>
+                                    </React.Suspense>
+                        }} />
+                        <Route path='/login' render={() => {
+                             return  <React.Suspense fallback={<Preloader/>}>
+                                        <Login/> 
+                                    </React.Suspense>
+                        }}/>
                     </div>
                 </div>
         );
