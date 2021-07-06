@@ -5,14 +5,14 @@ const FOLLOW = 'my-social-network/findUsers/FOLLOW';
 const UNFOLLOW = 'my-social-network/findUsers/UNFOLLOW';
 const SET_USERS = 'my-social-network/findUsers/SET-USERS';
 const SET_CURRENT_PAGE = 'my-social-network/findUsers/SET-CURRENT-PAGE';
-const SET_TOTAL_USERS_COUNT = 'my-social-network/findUsers/SET-TOTAL-USERS-COUNT';
+const SET_TOTAL_ITEMS_COUNT = 'my-social-network/findUsers/SET-TOTAL-ITEMS-COUNT';
 const PRELOADER_TOGGLE = 'my-social-network/findUsers/PRELOADER-TOGGLE'
 const FOLLOWING_TOGGLE = 'my-social-network/findUsers/FOLLOWING_TOGGLE';
 
 let initialization = {
     users: [],
     pageSize: 5,
-    totalUsersCount: 40,
+    totalItemsCount: 0,
     currentPage: 1,
     isFetching: false,
     followingToggle: []
@@ -46,10 +46,10 @@ const findUsersReducer = (state = initialization, action) => {
                 ...state,
                 currentPage: action.currentPage
             }
-        case SET_TOTAL_USERS_COUNT:
+        case SET_TOTAL_ITEMS_COUNT:
             return {
                 ...state,
-                totalUsersCount: action.count
+                totalItemsCount: action.count
             }
         case PRELOADER_TOGGLE:
             return {
@@ -81,8 +81,8 @@ export const setUsers = (users) => {
 export const setCurrentPage = (currentPage) => {
     return {type: SET_CURRENT_PAGE, currentPage}
 }
-export const setTotalUsersCount = (totalUsersCount) => {
-    return {type: SET_TOTAL_USERS_COUNT, count: totalUsersCount}
+export const setTotalItemsCount = (totalItemsCount) => {
+    return {type: SET_TOTAL_ITEMS_COUNT, count: totalItemsCount}
 }
 export const preloaderToggle = (isFetching) => {
     return {type: PRELOADER_TOGGLE, isFetching}
@@ -96,7 +96,7 @@ export const requestUsers = (currentPage, pageSize) => async (dispatch) => {
     dispatch(setCurrentPage(currentPage))
     let response = await usersAPI.getUsers(currentPage, pageSize)
     dispatch(setUsers(response.data.items))
-    dispatch(setTotalUsersCount(response.data.totalCount))
+    dispatch(setTotalItemsCount(response.data.totalCount))
     dispatch(preloaderToggle(false))
 }
 

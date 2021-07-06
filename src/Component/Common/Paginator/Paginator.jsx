@@ -1,25 +1,39 @@
-import React from "react";
-import styles from '../../FindUsers/FindUsers.module.css'
-import userPhoto from "../../../images/images.jpg";
-import {NavLink} from "react-router-dom";
+import React, { useState } from "react";
+import styles from '../../FindUsers/FindUsers.module.css';
+import cn from 'classnames'
 
-let Paginator = (props) => {
+let Paginator = ({portionSize = 10, ...props}) => {
 
-    let totalCountPages = Math.ceil(props.totalUsersCount / props.pageSize);
+    let totalCountPages = Math.ceil(props.totalItemsCount / props.pageSize);
     let pages = [];
 
     for (let i = 1; i <= totalCountPages; i++) {
         pages.push(i);
     }
+    let portionCount = Math.ceil(totalCountPages / portionSize);
+    let [portionNum, setPortionNum] = useState(1);
+    let leftPortionPageNum  = (portionNum - 1) * portionSize + 1;
+    let rightPortionPageNum = portionNum * portionSize;
 
 
     return (
-        pages.map(p => {
-            return <span className={props.currentPage === p && styles.selectedPage}
-                         onClick={() => {
+        
+        <div className={styles.paginator}>
+             {portionNum > 1 && <button onClick={() => {setPortionNum(portionNum -1)} }>Prev</button>}
+               {pages 
+                .filter(p => p >= leftPortionPageNum && p <= rightPortionPageNum)
+                .map(p => {
+                    return <span className={ cn ({
+                         [styles.selectedPage] :  props.currentPage === p },  
+                         styles.pageNumber) }
+                         key={p}
+                         onClick={(e) => {
                          props.changePage(p);
                          }}>{p}</span>
-        })
+                })}
+            {portionCount > portionNum && <button onClick={() => {setPortionNum(portionNum + 1)} }>Next</button>}
+            
+        </div>
     )
 }
 

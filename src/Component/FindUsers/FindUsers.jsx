@@ -5,12 +5,10 @@ import User from "./User";
 
 let FindUsers = (props) => {
 
-    return (
 
+
+    return (
         <div className={styles.usersInner}>
-            <Paginator currentPage={props.currentPage} changePage={props.changePage}
-                       totalUsersCount={props.totalUsersCount} pageSize={props.pageSize}
-            />
             {
                 props.users.map( u => <User users={u} key={u.id}
                                             followingToggle={props.followingToggle}
@@ -18,6 +16,11 @@ let FindUsers = (props) => {
                                             followSuccess={props.followSuccess}
                 />)
             }
+            <div>
+                <Paginator currentPage={props.currentPage} changePage={props.changePage}
+                        totalItemsCount={props.totalItemsCount} pageSize={props.pageSize}
+                />
+            </div>
         </div>
     )
 }

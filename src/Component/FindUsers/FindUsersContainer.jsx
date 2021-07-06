@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {
     follows, followSuccess, requestUsers,
     preloaderToggle,
-    setTotalUsersCount,
+    setTotalItemsCount,
     unfollow, unfollowSuccess
 } from "../../redux/findUsers-reducer";
 import FindUsers from "./FindUsers";
@@ -15,7 +15,7 @@ import {
     getCurrentPage, getFollowingToggle, getIsAuth,
     getIsFetching,
     getPageSize,
-    getTotalUsersCount,
+    getTotalItemsCount,
     getUsers
 } from "../../redux/findUsers-selectors";
 
@@ -36,7 +36,7 @@ class FindUsersContainer extends React.Component {
         return (
             <>
                 {this.props.isFetching ? <Preloader/> : null}
-                <FindUsers totalUsersCount={this.props.totalUsersCount}
+                <FindUsers totalItemsCount={this.props.totalItemsCount}
                            pageSize={this.props.pageSize}
                            currentPage={this.props.currentPage}
                            changePage={this.changePage}
@@ -57,7 +57,7 @@ let mapStateToProps = (state) => {
     return{
         users: getUsers(state),
         pageSize: getPageSize(state),
-        totalUsersCount: getTotalUsersCount(state),
+        totalItemsCount: getTotalItemsCount(state),
         currentPage: getCurrentPage(state),
         isFetching: getIsFetching(state),
         followingToggle: getFollowingToggle(state),
@@ -65,6 +65,6 @@ let mapStateToProps = (state) => {
     }
 }
 export default compose(
-    connect(mapStateToProps, {follows, unfollow, setTotalUsersCount, preloaderToggle, requestUsers, followSuccess, unfollowSuccess}),
+    connect(mapStateToProps, {follows, unfollow, setTotalItemsCount, preloaderToggle, requestUsers, followSuccess, unfollowSuccess}),
     WithAuthRedirect
 )(FindUsersContainer)

@@ -26,7 +26,6 @@ class App extends React.Component{
         }
 
         return (
-            <BrowserRouter>
                 <div className='app-wrapper'>
                     <HeaderContainer/>
                     < Navbar/>
@@ -38,7 +37,6 @@ class App extends React.Component{
                         <Route path='/login' render={() => <Login/> }/>
                     </div>
                 </div>
-            </BrowserRouter>
         );
     }
 }
@@ -47,5 +45,13 @@ const mapStateToProps = (state) => ({
     initialized: state.appPage.initialized
 })
 
+let AppContainer = connect(mapStateToProps,{initializedApp} )(App);
 
-export default connect(mapStateToProps,{initializedApp} )(App);
+const SocialApp = (props) => {
+    return  <BrowserRouter>
+                <Provider store={store}>
+                    <AppContainer/>
+                </Provider>
+            </BrowserRouter>
+}
+export default SocialApp;
